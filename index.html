@@ -4,212 +4,116 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DAV Solutions | Antim Prahar Series</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg-dark:#0b0f1a;
-  --bg-card:#11162a;
-  --accent:#d4af37;
-  --accent-soft:#f5d77a;
-  --text-main:#eaeaf0;
-  --text-muted:#aab0d1;
+--bg-dark:#0b0f1a;
+--bg-card:#11162a;
+--accent:#d4af37;
+--accent-soft:#f5d77a;
+--text-main:#eaeaf0;
+--text-muted:#aab0d1;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:'Poppins',sans-serif;
-  background:var(--bg-dark);
-  color:var(--text-main);
-}
-header{
-  background:linear-gradient(135deg,#1f2a64,#0b0f1a);
-  padding:70px 20px;
-  text-align:center;
-}
+body{font-family:'Poppins',sans-serif;background:var(--bg-dark);color:var(--text-main)}
+header{text-align:center;padding:70px 20px;background:linear-gradient(135deg,#1f2a64,#0b0f1a)}
 header h1{color:var(--accent);font-size:3rem}
 header p{color:var(--text-muted);margin-top:10px}
-
-.container{max-width:1100px;margin:auto;padding:50px 20px}
+.container{max-width:1200px;margin:auto;padding:50px 20px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
-
-.card{
-  background:var(--bg-card);
-  border-radius:18px;
-  padding:30px;
-  border:1px solid rgba(212,175,55,0.15);
-}
-.card h2{color:var(--accent)}
-.card p{color:var(--text-muted);margin-top:12px}
-
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 26px;
-  border-radius:30px;
-  background:linear-gradient(135deg,var(--accent),var(--accent-soft));
-  color:#000;
-  font-weight:600;
-  text-decoration:none;
-}
-
+.card,.subbox{background:var(--bg-card);border-radius:20px;padding:30px;border:1px solid rgba(212,175,55,0.15)}
+.card:hover{border-color:var(--accent)}
+h2,h3{color:var(--accent)}
+p{color:var(--text-muted);line-height:1.7}
+.btn{display:inline-block;margin-top:20px;padding:12px 26px;border-radius:30px;background:linear-gradient(135deg,var(--accent),var(--accent-soft));color:#000;font-weight:600;text-decoration:none;cursor:pointer}
 .section{display:none}
 .section.active{display:block}
-.back{cursor:pointer;color:var(--accent);margin-bottom:20px;display:inline-block}
-
-.subgrid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
-}
-.subbox{
-  background:#141a36;
-  padding:25px;
-  border-radius:15px;
-  text-align:center;
-}
-.subbox h3{color:var(--accent-soft)}
-
-footer{
-  text-align:center;
-  padding:25px;
-  color:#777;
-  background:#070a14;
-  margin-top:60px;
-}
+.back{color:var(--accent);cursor:pointer;margin-bottom:25px;display:inline-block}
+.subgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px}
+iframe{border:none;border-radius:12px}
+footer{text-align:center;padding:30px;color:#777;margin-top:80px;background:#070a14}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>DAV Solutions by Vaibhav Kumar Mishra</h1>
-  <p>Antim Prahar Series | Class 8 Board Preparation</p>
+<h1>DAV Solutions – Antim Prahar Series</h1>
+<p>Class 6 to 10 | Board Focused Preparation</p>
 </header>
 
 <div class="container">
 
 <!-- HOME -->
 <div id="home" class="section active">
-  <div class="grid">
+<div class="grid">
 
-    <div class="card">
-      <h2>📘 Important Questions</h2>
-      <p>Hindi & Sanskrit – board-oriented important questions.</p>
-      <a class="btn" onclick="openSection('important')">Open</a>
-    </div>
+<div class="card">
+<h2>📘 Important Questions</h2>
+<a class="btn" onclick="openSection('important')">Open</a>
+</div>
 
-    <div class="card">
-      <h2>📐 Mensuration Videos</h2>
-      <p>Class 8 Mensuration – chapter wise video lectures.</p>
-      <a class="btn" onclick="openSection('mensuration')">Watch</a>
-    </div>
+<div class="card">
+<h2>📺 Video Lectures</h2>
+<a class="btn" onclick="openSection('videos')">Open</a>
+</div>
 
-    <div class="card">
-      <h2>📺 YouTube Channel</h2>
-      <p>Visit our official YouTube channel for more lectures.</p>
-      <a class="btn" target="_blank" href="https://youtube.com/@solutions__vk07">
-        Visit Channel
-      </a>
-    </div>
+<div class="card">
+<h2>📚 Courses</h2>
+<a class="btn" onclick="openSection('courses')">Open</a>
+</div>
 
-    <div class="card">
-      <h2>ℹ About Us</h2>
-      <p>Know the vision of DAV Solutions – Antim Prahar Series.</p>
-      <a class="btn" onclick="openSection('about')">Read</a>
-    </div>
+<div class="card">
+<h2>🎓 My Courses</h2>
+<a class="btn" onclick="openSection('mycourses')">Open</a>
+</div>
 
-  </div>
+</div>
 </div>
 
 <!-- IMPORTANT QUESTIONS -->
 <div id="important" class="section">
-  <span class="back" onclick="goHome()">← Back</span>
-  <h2 style="color:var(--accent)">Important Questions</h2>
+<span class="back" onclick="goHome()">← Back</span>
+<div class="subgrid">
 
-  <div class="subgrid">
-    <div class="subbox">
-      <h3>Hindi</h3>
-      <a class="btn" target="_blank"
-        href="https://drive.google.com/file/d/1PmU6LwPjXdVSUtlKi6CtIGIQ-NjGx0TS/view">
-        Open PDF
-      </a>
-    </div>
-
-    <div class="subbox">
-      <h3>Sanskrit</h3>
-      <a class="btn" target="_blank"
-        href="https://drive.google.com/file/d/1zK0_C_CZDDTDOpz70i1SvgdyshSF_WyI/view">
-        Open PDF
-      </a>
-    </div>
-  </div>
+<div class="subbox">
+<h3>Hindi</h3>
+<a class="btn" target="_blank" href="https://drive.google.com/file/d/1PmU6LwPjXdVSUtlKi6CtIGIQ-NjGx0TS/view">Open PDF</a>
 </div>
 
-<!-- MENSURATION VIDEOS -->
-<div id="mensuration" class="section">
-  <span class="back" onclick="goHome()">← Back</span>
-  <h2 style="color:var(--accent)">Mensuration – Class 8</h2>
-
-  <div class="subgrid">
-    <div class="subbox">
-      <h3>Video 1</h3>
-      <a class="btn" target="_blank"
-        href="https://drive.google.com/file/d/1Dw101LJ8SmEJ1ynNaAEZlsjM4euPf_mF/view">
-        Watch
-      </a>
-    </div>
-
-    <div class="subbox">
-      <h3>Video 2</h3>
-      <a class="btn" target="_blank"
-        href="https://drive.google.com/file/d/1zcYeoxApyLwRIty2QBakCibvRbqmqzL-/view">
-        Watch
-      </a>
-    </div>
-
-    <div class="subbox">
-      <h3>Video 3</h3>
-      <a class="btn" target="_blank"
-        href="https://drive.google.com/file/d/13krXOnMXG3rjdu17PDNmaLXAiOnCjgH_/view">
-        Watch
-      </a>
-    </div>
-  </div>
+<div class="subbox">
+<h3>Sanskrit</h3>
+<a class="btn" target="_blank" href="https://drive.google.com/file/d/16xjahbBgBGSosN2GsRx9Doyr5KkHszs_/view">Open PDF</a>
 </div>
 
-<!-- ABOUT US -->
-<div id="about" class="section">
-  <span class="back" onclick="goHome()">← Back</span>
+</div>
+</div>
 
-  <div class="card">
-    <h2>About Us – DAV Solutions | Antim Prahar Series</h2>
+<!-- VIDEOS -->
+<div id="videos" class="section">
+<span class="back" onclick="goHome()">← Back</span>
+<div class="subbox">
+<h3>Mensuration – Video Lecture</h3>
+<iframe src="https://drive.google.com/file/d/1zK0_C_CZDDTDOpz70i1SvgdyshSF_WyI/preview" width="100%" height="360"></iframe>
+</div>
+</div>
 
-    <p>
-      DAV Solutions is a dedicated academic platform created to help students
-      in the most crucial stage of exam preparation – the Antim Prahar.
-    </p>
+<!-- COURSES -->
+<div id="courses" class="section">
+<span class="back" onclick="goHome()">← Back</span>
+<div class="card">
+<h2>Class 8 – Complete Course</h2>
+<p>✔ Mensuration Videos<br>✔ Hindi & Sanskrit Important Questions<br>✔ Board Syllabus</p>
+<p><strong>Price:</strong> ₹0</p>
+<a class="btn" onclick="buyCourse()">Buy Now</a>
+</div>
+</div>
 
-    <p>
-      The platform is specially designed for Class 8 DAV board students,
-      focusing only on high-priority questions and concepts.
-    </p>
-
-    <p>
-      All content is prepared after analysing previous years’ papers,
-      exam trends and marking schemes so that students revise
-      the right content at the right time.
-    </p>
-
-    <p>
-      This website is created and managed by
-      <strong>Vaibhav Kumar Mishra</strong>.
-    </p>
-
-    <p style="color:var(--accent);font-weight:600">
-      Revise Smart. Write Better. Score Higher.
-    </p>
-  </div>
+<!-- MY COURSES -->
+<div id="mycourses" class="section">
+<span class="back" onclick="goHome()">← Back</span>
+<div id="mycourseContent"></div>
 </div>
 
 </div>
@@ -220,10 +124,45 @@ footer{
 
 <script>
 function openSection(id){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
 }
+
 function goHome(){openSection('home')}
+
+function buyCourse(){
+localStorage.setItem("class8","true");
+alert("Course added to My Courses");
+openSection('mycourses');
+loadMyCourses();
+}
+
+function loadMyCourses(){
+let box=document.getElementById("mycourseContent");
+box.innerHTML="";
+if(localStorage.getItem("class8")){
+box.innerHTML=`
+<div class="card">
+<h2>Class 8 – My Course</h2>
+
+<h3>Mensuration Video</h3>
+<iframe src="https://drive.google.com/file/d/1zK0_C_CZDDTDOpz70i1SvgdyshSF_WyI/preview" width="100%" height="320"></iframe>
+
+<h3>Hindi Important Questions</h3>
+<a class="btn" target="_blank" href="https://drive.google.com/file/d/1PmU6LwPjXdVSUtlKi6CtIGIQ-NjGx0TS/view">Open PDF</a>
+
+<h3>Sanskrit Important Questions</h3>
+<a class="btn" target="_blank" href="https://drive.google.com/file/d/16xjahbBgBGSosN2GsRx9Doyr5KkHszs_/view">Open PDF</a>
+
+<h3>Syllabus</h3>
+<a class="btn" target="_blank" href="https://drive.google.com/file/d/1zK0_C_CZDDTDOpz70i1SvgdyshSF_WyI/view">Open PDF</a>
+</div>`;
+}else{
+box.innerHTML="<p>You have not purchased any course yet.</p>";
+}
+}
+
+loadMyCourses();
 </script>
 
 </body>
