@@ -4,7 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DAV Solutions | Antim Prahar Series</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- ✅ GOOGLE ADSENSE (DO NOT MODIFY) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2015344612635336"
+     crossorigin="anonymous"></script>
+<!-- ✅ GOOGLE ADSENSE END -->
 
 <style>
 :root{
@@ -60,18 +66,13 @@ footer{text-align:center;padding:30px;color:#777;margin-top:80px;background:#070
 </div>
 
 <div class="card">
-<h2>📚 Courses</h2>
-<a class="btn" onclick="openSection('courses')">Open</a>
-</div>
-
-<div class="card">
-<h2>🎓 My Courses</h2>
-<a class="btn" onclick="openSection('mycourses')">Open</a>
-</div>
-
-<div class="card">
 <h2>🎥 Recorded Videos</h2>
 <a class="btn" onclick="openSection('recordedvideos')">Open</a>
+</div>
+
+<div class="card">
+<h2>📚 Courses</h2>
+<a class="btn" onclick="openSection('courses')">Open</a>
 </div>
 
 </div>
@@ -82,7 +83,6 @@ footer{text-align:center;padding:30px;color:#777;margin-top:80px;background:#070
 <span class="back" onclick="goHome()">← Back</span>
 <div class="subgrid">
 
-<!-- Existing PDFs (kept intact) -->
 <div class="subbox">
 <h3>English</h3>
 <a class="btn" target="_blank" href="https://drive.google.com/file/d/1JRVPMcuJLa1VlvpWlPeUw1Ug-xfZy2qs/view?usp=drivesdk">Open PDF</a>
@@ -103,14 +103,13 @@ footer{text-align:center;padding:30px;color:#777;margin-top:80px;background:#070
 <a class="btn" target="_blank" href="https://drive.google.com/file/d/1woPGaaMdC_1ED7g7sa5w65xf_QTQOKFR/view">Open PDF</a>
 </div>
 
-<!-- NEWLY ADDED PDFs -->
 <div class="subbox">
-<h3>Hindi – Important Questions</h3>
+<h3>Hindi</h3>
 <a class="btn" target="_blank" href="https://drive.google.com/file/d/1PmU6LwPjXdVSUtlKi6CtIGIQ-NjGx0TS/view?usp=drivesdk">Open PDF</a>
 </div>
 
 <div class="subbox">
-<h3>Sanskrit – Important Questions</h3>
+<h3>Sanskrit</h3>
 <a class="btn" target="_blank" href="https://drive.google.com/file/d/16xjahbBgBGSosN2GsRx9Doyr5KkHszs_/view?usp=drivesdk">Open PDF</a>
 </div>
 
@@ -143,24 +142,15 @@ footer{text-align:center;padding:30px;color:#777;margin-top:80px;background:#070
 <!-- RECORDED VIDEOS -->
 <div id="recordedvideos" class="section">
 <span class="back" onclick="goHome()">← Back</span>
-<h2>🎥 Recorded Videos</h2>
 <div class="subgrid">
 
-<!-- Math tab -->
 <div class="subbox">
-<h3>Math</h3>
-<p>Mensuration Lectures</p>
+<h3>Math – Mensuration</h3>
 <iframe src="https://drive.google.com/file/d/1fCKffpkCw-nF-IQi405mJEhAzZ7P2Ilj/preview" width="100%" height="200"></iframe>
 <br><br>
 <iframe src="https://drive.google.com/file/d/1zcYeoxApyLwRIty2QBakCibvRbqmqzL-/preview" width="100%" height="200"></iframe>
 <br><br>
 <iframe src="https://drive.google.com/file/d/13krXOnMXG3rjdu17PDNmaLXAiOnCjgH_/preview" width="100%" height="200"></iframe>
-</div>
-
-<!-- Science tab placeholder -->
-<div class="subbox">
-<h3>Science</h3>
-<p>Coming soon… Videos will be added later</p>
 </div>
 
 </div>
@@ -171,16 +161,9 @@ footer{text-align:center;padding:30px;color:#777;margin-top:80px;background:#070
 <span class="back" onclick="goHome()">← Back</span>
 <div class="card">
 <h2>Class 8 – Complete Course</h2>
-<p>✔ Mensuration Videos<br>✔ Hindi & Sanskrit Important Questions<br>✔ Board Syllabus</p>
+<p>✔ Mensuration Videos<br>✔ Hindi & Sanskrit PDFs<br>✔ Board Syllabus</p>
 <p><strong>Price:</strong> ₹0</p>
-<a class="btn" onclick="buyCourse()">Buy Now</a>
 </div>
-</div>
-
-<!-- MY COURSES -->
-<div id="mycourses" class="section">
-<span class="back" onclick="goHome()">← Back</span>
-<div id="mycourseContent"></div>
 </div>
 
 </div>
@@ -191,49 +174,10 @@ footer{text-align:center;padding:30px;color:#777;margin-top:80px;background:#070
 
 <script>
 function openSection(id){
-document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
 }
-
 function goHome(){openSection('home')}
-
-function buyCourse(){
-localStorage.setItem("class8","true");
-alert("Course added to My Courses");
-openSection('mycourses');
-loadMyCourses();
-}
-
-function loadMyCourses(){
-let box=document.getElementById("mycourseContent");
-box.innerHTML="";
-if(localStorage.getItem("class8")){
-box.innerHTML=`
-<div class="card">
-<h2>Class 8 – My Course</h2>
-
-<h3>Mensuration Videos</h3>
-<iframe src="https://drive.google.com/file/d/1fCKffpkCw-nF-IQi405mJEhAzZ7P2Ilj/preview" width="100%" height="200"></iframe>
-<br><br>
-<iframe src="https://drive.google.com/file/d/1zcYeoxApyLwRIty2QBakCibvRbqmqzL-/preview" width="100%" height="200"></iframe>
-<br><br>
-<iframe src="https://drive.google.com/file/d/13krXOnMXG3rjdu17PDNmaLXAiOnCjgH_/preview" width="100%" height="200"></iframe>
-
-<h3>Hindi Important Questions</h3>
-<a class="btn" target="_blank" href="https://drive.google.com/file/d/1PmU6LwPjXdVSUtlKi6CtIGIQ-NjGx0TS/view?usp=drivesdk">Open PDF</a>
-
-<h3>Sanskrit Important Questions</h3>
-<a class="btn" target="_blank" href="https://drive.google.com/file/d/16xjahbBgBGSosN2GsRx9Doyr5KkHszs_/view?usp=drivesdk">Open PDF</a>
-
-<h3>Syllabus</h3>
-<p>PDF to be added here</p>
-</div>`;
-}else{
-box.innerHTML="<p>You have not purchased any course yet.</p>";
-}
-}
-
-loadMyCourses();
 </script>
 
 </body>
